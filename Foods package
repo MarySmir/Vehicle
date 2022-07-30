@@ -1,0 +1,92 @@
+package Foods;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Hamburger h1= new Hamburger(950,"salty",false,
+                440,"medium","lamb");
+
+
+        Pizza p1 = new Pizza(1650,"salty+",true,
+                "olives",88.5,'x');
+        System.out.println(h1.flavor);
+
+    }
+}
+
+package Foods;
+
+public class Food {
+   private int calories;
+   private String flavor;
+   private boolean is_dairy;
+
+    public Food(int calories, String flavor, boolean is_dairy) {
+        this.calories = calories;
+        this.flavor = flavor;
+        this.is_dairy = is_dairy;
+    }
+
+    @Override
+    public String toString() {
+        return "Food{" +
+                "calories=" + calories +
+                ", flavor='" + flavor + '\'' +
+                ", is_dairy=" + is_dairy +
+                '}';
+    }
+}
+
+package Foods;
+
+public class Hamburger extends Food {
+    int weigth;
+    String Doneness;
+    String meat;
+
+    public Hamburger(int calories, String flavor, boolean is_dairy, int weigth, String doneness, String meat) {
+        super(calories, flavor, is_dairy);
+        this.weigth = weigth;
+        Doneness = doneness;
+        this.meat = meat;
+    }
+
+    @Override
+    public String toString() {
+        return "Hamburger{" +
+                "weigth=" + weigth +
+                ", Doneness='" + Doneness + '\'' +
+                ", meat='" + meat + '\'' +
+                ", calories=" + calories +
+                ", flavor='" + flavor + '\'' +
+                ", is_dairy=" + is_dairy +
+                '}';
+    }
+}
+
+package Foods;
+
+public class Pizza extends Food{
+    String topics;
+    double price;
+    char size ;
+
+    public Pizza(int calories, String flavor, boolean is_dairy, String topics, double price, char size) {
+        super(calories, flavor, is_dairy);
+        this.topics = topics;
+        this.price = price;
+        this.size = size;
+    }
+
+    @Override
+    public String toString() {
+        return "Pizza{" +
+                "topics='" + topics + '\'' +
+                ", price=" + price +
+                ", size=" + size ;
+
+
+
+    }
+}
+
