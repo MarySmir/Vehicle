@@ -1,0 +1,152 @@
+public class Main {
+    public static void main(String[] args) {
+
+        Vehicle v1 = new Vehicle("ford",4,"white");
+        Car c1 = new Car("mazda", 5,"red","cx-5",180 ,3);
+        Truck t1= new Truck("daff",8,"black","cfr-1",28);
+        Bike b1 = new Bike("honda",2,"blue");
+
+      // Vehicle t2 = new Car ("dafff",8,"red");// vehicle can be any class
+
+       //System.out.println(t2.color);
+     //   Vehicle[] hodVehicles= new Vehicle[3];//polimorphizm - maarah shel vehicals
+     //  hodVehicles[0]=c1;
+     //  hodVehicles[1]=b1;
+     //  hodVehicles[2]=t1;
+
+
+    }
+}
+
+public class Vehicle {
+    String make ;
+    int wheels ;
+    String color;
+
+    public Vehicle(String make, int wheels, String color) {
+        this.make = make;
+        this.wheels = wheels;
+        this.color = color;
+    }
+
+    public Vehicle() {
+
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "make='" + make + '\'' +
+                ", wheels=" + wheels +
+                ", color='" + color + '\'' +
+                '}';
+    }
+    void go () {
+
+    }void brake(){
+
+        }
+    }
+public class Truck extends Vehicle{
+
+    String model;
+    int weight ;
+
+    public Truck(String make, int wheels, String color, String model, int weight) {
+        super(make, wheels, color);
+        this.model = model;
+        this.weight = weight;
+    }
+
+    @Override
+    void go() {
+        super.go();
+        System.out.println(" itshot here im truck whaa whaaa whaaaaa");
+    }
+
+    @Override
+    void brake() {
+        super.brake();
+        System.out.println("some stupid run me over ");
+    }
+
+    @Override
+    public String toString() {
+        return "Truck{" +
+                "model='" + model + '\'' +
+                ", weight=" + weight +
+                ", make='" + make + '\'' +
+                ", wheels=" + wheels +
+                ", color='" + color + '\'' +
+                '}';
+    }
+}
+
+public class Car extends Vehicle {
+
+
+    String model ;
+    int hp ;
+    int service ;
+
+    public Car(String make, int wheels, String color, String model, int hp, int service) {
+        super(make, wheels, color);
+        this.model = model;
+        this.hp = hp;
+        this.service = service;
+    }
+
+    @Override
+    void go() {
+        System.out.println("vooooooom");
+
+    }
+
+    @Override
+    void brake() {
+        System.out.println("brakingggggggggg");
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "model='" + model + '\'' +
+                ", hp=" + hp +
+                ", service=" + service +
+                ", make='" + make + '\'' +
+                ", wheels=" + wheels +
+                ", color='" + color + '\'' +
+                '}';
+    }
+}
+
+public class Bike extends Vehicle{
+    public Bike(String make, int wheels, String color) {
+        super(make, wheels, color);
+    }
+
+    @Override
+    void go() {
+        super.go();
+        System.out.println(this.make+ "ruuuuuunninggggg");
+    }
+
+    @Override
+    void brake() {
+        super.brake();
+        System.out.println("the brake snot workingggggggg");
+    }
+
+    @Override
+    public String toString() {
+        return "Bike{" +
+                "make='" + make + '\'' +
+                ", wheels=" + wheels +
+                ", color='" + color + '\'' +
+                '}';
+    }
+}
+
+
+
+
